@@ -14,7 +14,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #121212, #1a1a1a);
+            background: linear-gradient(135deg, #1a0a0a, #2a0a0a);
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -24,16 +24,16 @@
         }
 
         .admin-container {
-            background: #1e1e1e;
+            background: #2a0a0a;
             border-radius: 15px;
             padding: 40px;
             max-width: 500px;
             width: 100%;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 163, 49, 0.1);
         }
 
         h1 {
-            color: #38ff00;
+            color: #FFD700;
             margin-bottom: 30px;
             text-align: center;
             font-size: 2em;
@@ -53,9 +53,9 @@
         input {
             width: 100%;
             padding: 12px;
-            border: 2px solid #333;
+            border: 2px solid #4a2020;
             border-radius: 8px;
-            background: #2a2a2a;
+            background: #1a0a0a;
             color: #fff;
             font-size: 1em;
             transition: border-color 0.3s;
@@ -63,14 +63,14 @@
 
         input:focus {
             outline: none;
-            border-color: #38ff00;
+            border-color: #D4A331;
         }
 
         .btn {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #38ff00, #c6ff00);
-            color: #000;
+            background: linear-gradient(135deg, #D4A331, #FFD700, #CC9C2D);
+            color: #1a0a0a;
             border: none;
             border-radius: 8px;
             font-size: 1.1em;
@@ -82,7 +82,7 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(56, 255, 0, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5), 0 0 15px rgba(0, 239, 0, 0.3);
         }
 
         .btn:disabled {
@@ -100,9 +100,9 @@
         }
 
         .message.success {
-            background: rgba(56, 255, 0, 0.2);
-            border: 2px solid #38ff00;
-            color: #38ff00;
+            background: rgba(0, 239, 0, 0.2);
+            border: 2px solid #00EF00;
+            color: #00EF00;
             display: block;
         }
 
@@ -114,7 +114,7 @@
         }
 
         .current-info {
-            background: #2a2a2a;
+            background: #1a0a0a;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -126,7 +126,7 @@
         }
 
         .current-info strong {
-            color: #38ff00;
+            color: #FFD700;
         }
 
         .password-note {
@@ -164,7 +164,7 @@
         <div class="current-info" id="currentInfo">
             <p><strong>Número actual:</strong> <span id="currentPhone">Cargando...</span></p>
             <p><strong>Mensaje actual:</strong> <span id="currentMessage">Cargando...</span></p>
-            <p><strong>Cambios realizados:</strong> <span id="changeCount" style="color: #38ff00; font-size: 1.2em; font-weight: bold;">0</span> <button id="resetBtn" class="reset-btn">Resetear</button></p>
+            <p><strong>Cambios realizados:</strong> <span id="changeCount" style="color: #FFD700; font-size: 1.2em; font-weight: bold;">0</span> <button id="resetBtn" class="reset-btn">Resetear</button></p>
         </div>
 
         <form id="adminForm">
