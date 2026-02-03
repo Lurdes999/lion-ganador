@@ -1,7 +1,7 @@
 {
-  "name": "tridente",
+  "name": "lion-ganador",
   "version": "1.0.0",
-  "description": "Sitio web tridente con panel de administración",
+  "description": "Sitio web Lion Ganador con panel de administración",
   "scripts": {
     "dev": "vercel dev"
   },
