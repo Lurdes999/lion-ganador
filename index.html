@@ -140,12 +140,16 @@
   fbq('track', 'PageView');
 
   // Deduplicación: un solo evento WhatsAppClick por intención (evita doble clic / doble envío)
+  // value y currency según Meta: evitan error de parámetros y divisa
   window.trackWhatsAppClick = function() {
     var now = Date.now();
     if (window._lastWhatsAppClick && (now - window._lastWhatsAppClick) < 2500) return;
     window._lastWhatsAppClick = now;
     var eventId = 'wa_' + now + '_' + Math.random().toString(36).slice(2);
-    fbq('trackCustom', 'WhatsAppClick', {}, { eventID: eventId });
+    fbq('trackCustom', 'WhatsAppClick', {
+      value: 2000,
+      currency: 'ARS'
+    }, { eventID: eventId });
   };
 </script>
 <noscript>
