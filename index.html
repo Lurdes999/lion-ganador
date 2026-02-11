@@ -138,6 +138,15 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '2303352706840246'); 
   fbq('track', 'PageView');
+
+  // Deduplicación: un solo evento WhatsAppClick por intención (evita doble clic / doble envío)
+  window.trackWhatsAppClick = function() {
+    var now = Date.now();
+    if (window._lastWhatsAppClick && (now - window._lastWhatsAppClick) < 2500) return;
+    window._lastWhatsAppClick = now;
+    var eventId = 'wa_' + now + '_' + Math.random().toString(36).slice(2);
+    fbq('trackCustom', 'WhatsAppClick', {}, { eventID: eventId });
+  };
 </script>
 <noscript>
   <img height="1" width="1" style="display:none"
@@ -157,7 +166,7 @@
            id="whatsapp-button"
            class="cta-button" 
            target="_blank" 
-           onclick="fbq('track', 'Purchase', {value: 3000, currency: 'ARS'})">
+           onclick="trackWhatsAppClick()">
             <i class='fab fa-whatsapp'></i> ¡Crea tu usuario!
         </a>
     </div>
