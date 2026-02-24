@@ -136,25 +136,26 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '883183811182358'); 
+  fbq('init', '926617466750987'); 
   fbq('track', 'PageView');
 
   // Deduplicación: un solo evento WhatsAppClick por intención (evita doble clic / doble envío)
-  // value y currency según Meta: evitan error de parámetros y divisa
+  // value/currency: en el clic no hay venta real; usar 0 evita inflar ROAS. Para ROAS correcto,
+  // enviar el valor real con el evento Purchase vía Conversions API cuando haya conversión (ej. depósito).
   window.trackWhatsAppClick = function() {
     var now = Date.now();
     if (window._lastWhatsAppClick && (now - window._lastWhatsAppClick) < 2500) return;
     window._lastWhatsAppClick = now;
     var eventId = 'wa_' + now + '_' + Math.random().toString(36).slice(2);
     fbq('trackCustom', 'WhatsAppClick', {
-      value: 2000,
+      value: 0,
       currency: 'ARS'
     }, { eventID: eventId });
   };
 </script>
 <noscript>
   <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=883183811182358&ev=PageView&noscript=1"/>
+       src="https://www.facebook.com/tr?id=926617466750987&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Meta Pixel Code -->
 
